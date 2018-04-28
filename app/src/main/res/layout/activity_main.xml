@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.example.jiangsj.arcdemo.view.ArcSlidingMenu
+        android:id="@+id/arc_menu"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:text="Hello World!"
+        android:background="@drawable/arc_bg"
+        app:radius="140dp" >
+        <TextView
+            android:id="@+id/iv_zoom1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_zoom_bg"
+            android:gravity="center"
+            android:text="1x"
+            />
+        <TextView
+            android:id="@+id/iv_zoom2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_zoom_bg"
+            android:gravity="center"
+            android:text="2x"
+            />
+        <TextView
+            android:id="@+id/iv_zoom3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_zoom_bg"
+            android:gravity="center"
+            android:text="3x"
+            />
+        <TextView
+            android:id="@+id/iv_zoom4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_zoom_bg"
+            android:gravity="center"
+            android:text="4x"
+            />
+
+    </com.example.jiangsj.arcdemo.view.ArcSlidingMenu>
+
+</LinearLayout>
