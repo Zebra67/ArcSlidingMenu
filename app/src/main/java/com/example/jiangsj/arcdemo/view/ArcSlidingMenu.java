@@ -30,6 +30,13 @@ public class ArcSlidingMenu extends ViewGroup implements View.OnClickListener {
     private int lastY;
     private boolean isPrePareDismiss = false;
     private View[] chidViews;
+    private OnZoomValueChangedListener mOnZoomValueChangedListener;
+
+
+    public interface OnZoomValueChangedListener {
+        void onZoomValueChanged(int v);
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -39,11 +46,17 @@ public class ArcSlidingMenu extends ViewGroup implements View.OnClickListener {
             if(view == v){
                 mOffset = 0-i;
                 requestLayout();
-                Log.d(TAG,"view index is "+i) ;
+                mOnZoomValueChangedListener.onZoomValueChanged(Math.abs(mOffset)+1);
             }
         }
 
     }
+
+    public  void setOnZoomValueChangedListener(OnZoomValueChangedListener l){
+        mOnZoomValueChangedListener = l;
+    }
+
+
 
 
 
@@ -137,6 +150,7 @@ public class ArcSlidingMenu extends ViewGroup implements View.OnClickListener {
             }
             requestLayout();
         }
+        mOnZoomValueChangedListener.onZoomValueChanged(Math.abs(mOffset)+1);
     }
 
 
@@ -166,4 +180,10 @@ public class ArcSlidingMenu extends ViewGroup implements View.OnClickListener {
 
         return true;
     }
+
+    public void setZoomValue(int x){
+        mOffset = -x+1;
+        requestLayout();
+    }
+
 }
